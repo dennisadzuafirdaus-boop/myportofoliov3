@@ -566,6 +566,88 @@ const services = [
   font-weight: 700;
   color: #0F172A;
 }
+
+/* ── RESPONSIVE MOBILE ── */
+@media (max-width: 768px) {
+
+  .contact {
+    padding: 4rem 1.25rem 0;
+  }
+
+  /* Grid jadi 1 kolom */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-title {
+    font-size: 26px;
+  }
+
+  .contact-subtitle {
+    font-size: 14px;
+  }
+
+  /* Social card sedikit lebih compact */
+  .social-card {
+    padding: 12px 14px;
+  }
+
+  .social-icon-box {
+    width: 38px;
+    height: 38px;
+  }
+
+  .social-name {
+    font-size: 13px;
+  }
+
+  /* Quick info grid tetap 2 kolom */
+  .quick-info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Status badges wrap */
+  .status-badges {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .footer-text {
+    font-size: 12px;
+  }
+
+  /* PDF card wrap di mobile */
+  .pdf-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .pdf-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* ── Tablet (768px - 1024px) ── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .quick-info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
 /* ════════════════════════════
    FOOTER
 ════════════════════════════ */
