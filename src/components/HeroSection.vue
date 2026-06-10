@@ -319,19 +319,55 @@ import fotoporto from '@/assets/img/fotoporto.jpg'
   color: #94A3B8;
 }
 
-/* ── ANIMATIONS ── */
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
+/* ── RESPONSIVE MOBILE ── */
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 1.5rem 3rem;
+  }
 
-@keyframes counter-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(-360deg); }
-}
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
 
-@keyframes float-y {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
+  /* Foto/avatar pindah ke atas, konten teks di bawah */
+  .hero-visual {
+    order: -1;
+  }
+
+  .hero-name {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .avatar-ring {
+    width: 200px;
+    height: 200px;
+  }
+
+  .avatar-box {
+    width: 160px;
+    height: 160px;
+    font-size: 38px;
+  }
+
+  .float-card {
+    display: none;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+  }
+
+  .hero-btns {
+    flex-wrap: wrap;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+  }
 }
 </style>

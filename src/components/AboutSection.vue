@@ -411,4 +411,30 @@ onUnmounted(() => {
   color: #0F172A;
   font-weight: 600;
 }
+
+/* ── RESPONSIVE MOBILE ── */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Foto pindah ke atas */
+  .about-right {
+    order: -1;
+  }
+
+  .profile-img-box {
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-title {
+    font-size: 26px;
+  }
+}
 </style>
