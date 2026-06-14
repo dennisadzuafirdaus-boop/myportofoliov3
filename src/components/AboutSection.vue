@@ -124,7 +124,7 @@ const stats = [
 const infoList = [
   { label: 'Name',      value: 'Dennis Adzua Firdaus'  },
   { label: 'Role',      value: 'Fullstack Developer'   },
-  { label: 'Location',  value: 'Jakarta, Indonesia'    },
+  { label: 'Location',  value: 'Bogor, Indonesia'    },
   { label: 'Status',    value: 'Open for Work and Projects'},
 ]
 
