@@ -125,7 +125,6 @@ const infoList = [
   { label: 'Name',      value: 'Dennis Adzua Firdaus'  },
   { label: 'Role',      value: 'Fullstack Developer'   },
   { label: 'Location',  value: 'Jakarta, Indonesia'    },
-  { label: 'Education', value: 'SMK 37 PGRI Jakarta'   },
   { label: 'Status',    value: 'Open for Work and Projects'},
 ]
 
