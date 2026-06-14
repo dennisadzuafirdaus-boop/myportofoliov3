@@ -61,7 +61,7 @@
           <div class="profile-wrapper">
             <div class="profile-img-box">
               <img
-                src="../assets/img/fotoporto.jpg"
+                src="../assets/img/foto1.jpeg"
                 alt="Dennis Adzua Firdaus"
                 class="profile-img"
               />
