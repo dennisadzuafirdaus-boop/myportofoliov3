@@ -424,8 +424,11 @@ onUnmounted(() => {
   }
 
   .profile-img-box {
-    max-width: 100%;
-    aspect-ratio: 16 / 9;
+    width: 100%;
+    max-width: 280px;
+    height: 350px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 5;
   }
 
   .stats-grid {
