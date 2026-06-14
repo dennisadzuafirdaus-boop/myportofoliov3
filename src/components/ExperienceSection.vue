@@ -26,7 +26,7 @@
             <div class="exp-logo">🏫</div>
             <div class="exp-meta">
               <div class="exp-top-row">
-                <h3 class="exp-role"Web Developer</h3>
+                <h3 class="exp-role">Web Developer</h3>
                 <span class="exp-badge badge-blue">PKL (Praktik Kerja Lapangan)</span>
               </div>
               <p class="exp-company">SMK 37 PGRI Jakarta</p>
@@ -162,9 +162,11 @@
             <p class="exp-desc">
             Mengikuti Program Magang HUB yang diselenggarakan oleh Kementerian Ketenagakerjaan Republik Indonesia, sebuah program yang bertujuan meningkatkan kompetensi dan pengalaman kerja peserta melalui penempatan langsung di dunia industri.
             </p>
+            <br>
             <p class="exp-desc">
             Selama masa magang di PT. Eka Mulia Bhakti sebagai IT Support, Membantu dalam pemeliharaan dan pengelolaan infrastruktur teknologi informasi perusahaan untuk memastikan operasional berjalan dengan optimal. Melakukan Migration data pasien dari sistem lama ke sistem baru, Menghubungkan Dicom router ke sistem Teramedik untuk mengirimkan gambar hasil rontsen ke platform satu sehat lewat sistem orthanc, dan perawatan perangkat keras maupun perangkat lunak, serta memberikan dukungan teknis kepada karyawan dalam menyelesaikan berbagai permasalahan yang berkaitan dengan sistem komputer, jaringan, dan aplikasi kerja.
             </p>
+            <br>
             <p class="exp-desc">
             Selain itu, membantu proses troubleshooting terhadap komputer, printer, jaringan internet, dan perangkat pendukung lainnya, serta membantu dalam pengelolaan aset teknologi informasi perusahaan. Berkolaborasi dengan tim untuk memastikan keamanan, stabilitas, dan efisiensi penggunaan teknologi di lingkungan kerja.
             </p>
