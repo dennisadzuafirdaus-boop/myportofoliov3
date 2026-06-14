@@ -115,9 +115,9 @@ import gsap from 'gsap'
 // ── Data Stats ──
 const stats = [
 //   { target: 3,  suffix: '+', label: 'Years Experience' },
-  { target: 2, suffix: '+', label: 'Projects Done'    },
-  { target: 100, suffix: '+', label: 'Berkomitmen'    },
-//   { target: 2,  suffix: '+', label: 'Years at SMK'     },
+  { target: 2, suffix: '++', label: 'Projects Done'    },
+  { target: 100, suffix: '%', label: 'Berkomitmen'    },
+//   { target: 6,  suffix: '+', label: 'Years at SMK'     },
 ]
 
 // ── Data Info ──
