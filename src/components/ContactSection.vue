@@ -12,8 +12,7 @@
       <div class="section-heading fade-up">
         <h2 class="contact-title">Let's work together</h2>
         <p class="contact-subtitle">
-          Terbuka untuk project freelance, kolaborasi, maupun full-time opportunities.
-          Feel free to reach out!
+          Open to freelance projects, collaborations, and full-time opportunities. Feel free to reach out!
         </p>
       </div>
 
@@ -146,9 +145,7 @@
             </div>
             <p class="status-text">Available for work</p>
             <p class="status-desc">
-              Saat ini saya aktif mencari peluang baru — baik freelance,
-              part-time, maupun full-time. Response time biasanya dalam
-              24 jam.
+              I'm currently actively seeking new opportunities — whether freelance, part-time, or full-time. Response time is usually within 24 hours.
             </p>
             <div class="status-badges">
               <span class="status-badge">Freelance ✓</span>
@@ -165,7 +162,7 @@
             </div>
             <p class="location-city">Bogor, Indonesia</p>
             <p class="location-desc">
-              Open untuk remote work maupun on-site di area Jabodetabek.
+              Open for remote and on-site work.
             </p>
           </div>
 
@@ -174,7 +171,7 @@
             <div class="quick-card">
               <span class="quick-icon">⚡</span>
               <p class="quick-title">Response Time</p>
-              <p class="quick-value">{"< 24 jam"}</p>
+              <p class="quick-value">24 hours</p>
             </div>
             <div class="quick-card">
               <span class="quick-icon">🌏</span>
@@ -205,7 +202,7 @@
         <span class="footer-name">Dennis Adzua Firdaus</span>
         · {{ currentYear }}
       </p>
-      <p class="footer-stack">Vue.js · Vite · Tailwind CSS</p>
+      <p class="footer-stack">FullStack Developer</p>
     </div>
 
   </section>
@@ -221,7 +218,7 @@ const currentYear = computed(() => new Date().getFullYear())
 const services = [
   {
     name: 'Web App Development',
-    desc: 'Fullstack web app menggunakan Laravel & Vue.js',
+    desc: 'Fullstack web app using Laravel & Vue.js',
   },
   {
     name: 'Admin Dashboard',

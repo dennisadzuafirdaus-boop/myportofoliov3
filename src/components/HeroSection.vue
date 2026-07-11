@@ -19,7 +19,7 @@
         </div>
 
         <p class="hero-desc">
-          Seorang pengembang web yang memiliki minat dan semangat belajar yang sangat tinggi di bidang teknologi dan pengembangan aplikasi web. Berpengalaman membangun aplikasi yang bersih, modern, dan mudah digunakan, mulai dari admin dashboard, sistem POS, e-commerce, hingga landing page yang elegan. Berfokus pada Laravel dan Vue.js, serta selalu antusias mempelajari teknologi baru untuk menciptakan solusi digital yang efektif, efisien, dan bernilai bagi pengguna maupun bisnis.
+          A web developer with a keen interest and passion for learning in technology and web application development. Experienced in building clean, modern, and user-friendly applications, from admin dashboards and POS systems to e-commerce platforms and elegant landing pages. Focused on Laravel and Vue.js, he is always enthusiastic about learning new technologies to create effective, efficient, and valuable digital solutions for both users and businesses.
         </p>
 
         <div class="hero-btns">
@@ -28,44 +28,47 @@
         </div>
 
         <!-- Social Links -->
-<div class="hero-socials">
-  
-    <a href="https://github.com/dennisadzuafirdaus-boop"
-    target="_blank"
-    class="social-btn"
-    aria-label="GitHub"
-  >
-    <GithubIcon :size="18" />
-  </a>
+        <div class="hero-socials">
+          
+            <a href="https://github.com/dennisadzuafirdaus-boop"
+            target="_blank"
+            class="social-btn"
+            aria-label="GitHub"
+          >
+            <GithubIcon :size="18" />
+          </a>
 
-  
-    <a href="https://linkedin.com/in/dennis-adzua-firdaus"
-    target="_blank"
-    class="social-btn"
-    aria-label="LinkedIn"
-  >
-    <LinkedinIcon :size="18" />
-  </a>
+          
+            <a href="https://linkedin.com/in/dennis-adzua-firdaus"
+            target="_blank"
+            class="social-btn"
+            aria-label="LinkedIn"
+          >
+            <LinkedinIcon :size="18" />
+          </a>
 
-  
-    <a href="https://instagram.com/adzuaaa"
-    target="_blank"
-    class="social-btn"
-    aria-label="Instagram"
-  >
-    <InstagramIcon :size="18" />
-  </a>
-</div> 
+          
+            <a href="https://instagram.com/adzuaaa"
+            target="_blank"
+            class="social-btn"
+            aria-label="Instagram"
+          >
+            <InstagramIcon :size="18" />
+          </a>
+        </div>
 
       </div>
 
-      <!-- Kanan: Avatar / Visual -->
+      <!-- Kanan: Profile Card (tilt effect) -->
       <div class="hero-visual">
-        <div class="avatar-ring">
-          <div class="avatar-box">
-             <img :src="fotoporto" alt="Dennis Adzua Firdaus" class="avatar-img" />
-          </div>
-        </div>
+        <ProfileCard
+          :avatar-url="fotoporto"
+          name="Dennis Adzua Firdaus"
+          handle="@Dennis"
+          status="Available for work"
+          contact-text="Contact"
+          contact-href="#contact"
+        />
 
         <!-- Floating info cards -->
         <div class="float-card card-top">
@@ -93,7 +96,9 @@
 <script setup>
 import { Github as GithubIcon, Linkedin as LinkedinIcon, Instagram as InstagramIcon } from 'lucide-vue-next'
 import fotoporto from '@/assets/img/fotoporto.jpg'
+import ProfileCard from './ProfileCard.vue'
 </script>
+
 <style scoped>
 .hero {
   min-height: 100vh;
@@ -208,12 +213,6 @@ import fotoporto from '@/assets/img/fotoporto.jpg'
 .hero-socials {
   display: flex;
   align-items: center;
-  gap: 8px;
-}
-
-.hero-socials {
-  display: flex;
-  align-items: center;
   gap: 10px;
 }
 
@@ -242,41 +241,7 @@ import fotoporto from '@/assets/img/fotoporto.jpg'
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.avatar-ring {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  border: 2px dashed #E2E8F0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: spin-slow 20s linear infinite;
-}
-
-.avatar-box {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
-  border: 1px solid #E2E8F0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 52px;
-  font-weight: 700;
-  color: #0F172A;
-  letter-spacing: -1px;
-  /* Counter-rotate supaya text tidak ikut muter */
-  animation: counter-spin 20s linear infinite;
-}
-
-.avatar-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  padding: 2rem 0;
 }
 
 /* Floating cards */
@@ -290,17 +255,18 @@ import fotoporto from '@/assets/img/fotoporto.jpg'
   border-radius: 12px;
   padding: 10px 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  z-index: 6;
 }
 
 .card-top {
   top: 10px;
-  right: -10px;
+  right: 0;
   animation: float-y 3s ease-in-out infinite;
 }
 
 .card-bottom {
   bottom: 10px;
-  left: -10px;
+  left: 0;
   animation: float-y 3s ease-in-out infinite 1.5s;
 }
 
@@ -319,6 +285,11 @@ import fotoporto from '@/assets/img/fotoporto.jpg'
   color: #94A3B8;
 }
 
+@keyframes float-y {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
 /* ── RESPONSIVE MOBILE ── */
 @media (max-width: 768px) {
   .hero {
@@ -330,25 +301,14 @@ import fotoporto from '@/assets/img/fotoporto.jpg'
     gap: 2.5rem;
   }
 
-  /* Foto/avatar pindah ke atas, konten teks di bawah */
   .hero-visual {
     order: -1;
+    padding: 1rem 0;
   }
 
   .hero-name {
     font-size: 32px;
     letter-spacing: -1px;
-  }
-
-  .avatar-ring {
-    width: 200px;
-    height: 200px;
-  }
-
-  .avatar-box {
-    width: 160px;
-    height: 160px;
-    font-size: 38px;
   }
 
   .float-card {

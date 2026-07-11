@@ -12,7 +12,7 @@
       <div class="section-heading fade-up">
         <h2 class="exp-title">Where I've worked</h2>
         <p class="exp-subtitle">
-          Perjalanan profesional dan pengalaman kerja saya.
+          My professional journey and work experience.
         </p>
       </div>
 
@@ -26,13 +26,13 @@
             <div class="exp-logo">🏫</div>
             <div class="exp-meta">
               <div class="exp-top-row">
-                <h3 class="exp-role">Web Developer</h3>
-                <span class="exp-badge badge-blue">PKL (Praktik Kerja Lapangan)</span>
+                <h3 class="exp-role">Software Engineer</h3>
+                <span class="exp-badge badge-blue">Internship</span>
               </div>
               <p class="exp-company">SMK 37 PGRI Jakarta</p>
               <div class="exp-info-row">
                 <span class="exp-info-item">
-                  <span>📅</span> Oktober 2024 – Januari 2025
+                  <span>📅</span> October 2024 – January 2025
                 </span>
                 <span class="exp-info-item">
                   <span>📍</span> Jakarta, Indonesia
@@ -47,18 +47,13 @@
           <div class="exp-section">
             <h4 class="exp-section-title">Deskripsi</h4>
             <p class="exp-desc">
-              Melaksanakan Praktik Kerja Lapangan yang di selanggarakan oleh pihak
-              universitas untuk persyaratan tugas akhir yang sudah di bagi 1 
-              kelompok berisi 8 orang sebagai Fullstack Developer di SMK 37
-              PGRI Jakarta. Bertanggung jawab dalam perancangan dan pengembangan Sistem
-              Administrasi Pembayaran SPP berbasis web menggunakan PHP Native dan MySQL,
-              mulai dari desain database hingga tampilan antarmuka pengguna.
+              Underwent a Field Work Internship organized by the university to fulfill the final project requirements.The group was divided into eight Fullstack Developers at SMK 37 PGRI Jakarta. Responsible for designing and developing a web-based Tuition Payment Administration System using PHP Native and MySQL, from database design to user interface.
             </p>
           </div>
 
           <!-- Tanggung Jawab -->
           <div class="exp-section">
-            <h4 class="exp-section-title">Tanggung Jawab</h4>
+            <h4 class="exp-section-title">Responsibility</h4>
             <ul class="resp-list">
               <li
                 class="resp-item"
@@ -89,9 +84,9 @@
 
           <!-- Dokumen PKL -->
           <div class="exp-section">
-            <h4 class="exp-section-title">Dokumen PKL</h4>
+            <h4 class="exp-section-title">Internship Documents</h4>
             <p class="gallery-subtitle">
-              Dokumen resmi selama Praktik Kerja Lapangan.
+              Official documents during Field Work Practice.
             </p>
             <div class="pdf-list" ref="pdfListRef">
               <div
@@ -113,7 +108,7 @@
                     rel="noopener noreferrer"
                     class="pdf-btn btn-view"
                   >
-                    <span>👁</span> Lihat
+                    <span>👁</span> Look
                   </a>
                   
                     <a :href="doc.url"
@@ -137,18 +132,18 @@
             <div class="exp-meta">
               <div class="exp-top-row">
                 <h3 class="exp-role">IT Support</h3>
-                <span class="exp-badge badge-green">Magang HUB Kemnaker</span>
+                <span class="exp-badge badge-green">Ministry of Manpower HUB internship program</span>
               </div>
               <p class="exp-company">PT. Eka Mulia Bhakti</p>
               <div class="exp-info-row">
                 <span class="exp-info-item">
-                  <span>📅</span> September 2025 – Mei 2026
+                  <span>📅</span> September 2025 – May 2026
                 </span>
                 <span class="exp-info-item">
                   <span>📍</span> Bogor, Indonesia
                 </span>
                 <span class="exp-info-item">
-                  <span>🏛️</span> Program Magang HUB — Kemnaker RI
+                  <span>🏛️</span>HUB Internship Program — Ministry of Manpower of the Republic of Indonesia
                 </span>
               </div>
             </div>
@@ -160,21 +155,21 @@
           <div class="exp-section">
             <h4 class="exp-section-title">Deskripsi</h4>
             <p class="exp-desc">
-            Mengikuti Program Magang HUB yang diselenggarakan oleh Kementerian Ketenagakerjaan Republik Indonesia, sebuah program yang bertujuan meningkatkan kompetensi dan pengalaman kerja peserta melalui penempatan langsung di dunia industri.
+            Participate in the HUB Internship Program organized by the Ministry of Manpower of the Republic of Indonesia, a program that aims to improve participants' competencies and work experience through direct placement in the industrial world.
             </p>
             <br>
             <p class="exp-desc">
-            Selama masa magang di PT. Eka Mulia Bhakti sebagai IT Support, Membantu dalam pemeliharaan dan pengelolaan infrastruktur teknologi informasi perusahaan untuk memastikan operasional berjalan dengan optimal. Melakukan Migration data pasien dari sistem lama ke sistem baru, Menghubungkan Dicom router ke sistem Teramedik untuk mengirimkan gambar hasil rontsen ke platform satu sehat lewat sistem orthanc, dan perawatan perangkat keras maupun perangkat lunak, serta memberikan dukungan teknis kepada karyawan dalam menyelesaikan berbagai permasalahan yang berkaitan dengan sistem komputer, jaringan, dan aplikasi kerja.
+            During his internship at PT. Eka Mulia Bhakti as IT Support, Assisted in the maintenance and management of the company's information technology infrastructure to ensure optimal operations. Performed patient data migration from the old system to the new system, Connected Dicom router to the Teramedi system to send x-ray images to the Satu Sehat platform via the Orthanc system, and hardware and software maintenance, as well as provided technical support to employees in solving various problems related to computer systems, networks, and work applications.
             </p>
             <br>
             <p class="exp-desc">
-            Selain itu, membantu proses troubleshooting terhadap komputer, printer, jaringan internet, dan perangkat pendukung lainnya, serta membantu dalam pengelolaan aset teknologi informasi perusahaan. Berkolaborasi dengan tim untuk memastikan keamanan, stabilitas, dan efisiensi penggunaan teknologi di lingkungan kerja.
+            In addition, they assist in troubleshooting computers, printers, internet networks, and other supporting devices, as well as assisting in the management of the company's information technology assets. Collaborate with the team to ensure the security, stability, and efficiency of technology use in the work environment.
             </p>
           </div>
 
           <!-- Tanggung Jawab -->
           <div class="exp-section">
-            <h4 class="exp-section-title">Tanggung Jawab</h4>
+            <h4 class="exp-section-title">Responsibility</h4>
             <ul class="resp-list">
               <li
                 class="resp-item"
@@ -205,8 +200,8 @@
 
           <!-- Dokumentasi Gallery — Option D: Masonry + Reveal -->
           <div class="exp-section">
-            <h4 class="exp-section-title">Dokumentasi Magang</h4>
-            <p class="gallery-subtitle">Klik gambar untuk melihat lebih detail.</p>
+            <h4 class="exp-section-title">Internship Documentation</h4>
+            <p class="gallery-subtitle">Click on the image to view more details.</p>
 
             <div class="masonry-grid" ref="galleryRef">
 
@@ -345,23 +340,23 @@ import doc8 from '../assets/img/dokumen8.png'
 
 // ── SMK 37 PGRI — Responsibilities ──
 const smkResponsibilities = [
-  'Merancang database sistem administrasi pembayaran SPP menggunakan MySQL.',
-  'Membangun sistem menggunakan PHP Native.',
-  'Mengimplementasikan fitur laporan pembayaran yang dapat di-export ke PDF.',
-  'Melakukan testing dan debugging pada sistem yang dikembangkan.',
-  'Mendokumentasikan setiap fitur dan alur sistem secara teknis.',
+  'Designing a database for a tuition payment administration system using MySQL.',
+'Building a system using PHP Native.',
+'Implementing a payment reporting feature that can be exported to PDF.',
+'Testing and debugging the developed system.',
+'Documenting each feature and system flow technically.',
 ]
 
 const smkTechStack = ['PHP Native', 'MySQL', 'CSS', 'HTML']
 
 // ── IT Support — Responsibilities ──
 const itResponsibilities = [
-  'Melakukan troubleshooting perangkat keras dan lunak untuk seluruh karyawan.',
-  'Memelihara dan mengkonfigurasi jaringan komputer di lingkungan kantor.',
-  'Menginstalasi dan mengkonfigurasi software yang dibutuhkan pengguna.',
-  'Memberikan dukungan teknis langsung kepada karyawan secara on-site.',
-  'Mendokumentasikan setiap permasalahan IT dan solusi yang diberikan.',
-  'Membantu pengelolaan aset perangkat IT perusahaan.',
+  'Perform hardware and software troubleshooting for all employees.',
+'Maintain and configure computer networks in the office environment.',
+'Install and configure software required by users.',
+'Provide direct on-site technical support to employees.',
+'Document every IT issue and the solutions provided.',
+'Assist in managing the companys IT equipment assets.',
 ]
 
 const itTechStack = [
@@ -371,11 +366,11 @@ const itTechStack = [
 
 // ── Data PDF ──
 const pdfDocs = [
-  { url: pdfFromKKP,          name: 'Form KKP',                  meta: 'Formulir Kartu Kerja Praktik',              icon: '📋' },
-  { url: pdfLembarPengesahan, name: 'Lembar Pengesahan Instansi', meta: 'Dokumen pengesahan dari instansi',           icon: '✅' },
-  { url: pdfLembarPenilaian,  name: 'Lembar Penilaian Instansi',  meta: 'Penilaian dari pembimbing instansi',         icon: '📊' },
-  { url: pdfSuratKeterangan,  name: 'Surat Keterangan Instansi',  meta: 'Surat keterangan resmi dari instansi',      icon: '🏢' },
-  { url: pdfSuratPermohonan,  name: 'Surat Permohonan KKP',       meta: 'Surat permohonan Praktik Kerja Lapangan',   icon: '📝' },
+  { url: pdfFromKKP,          name: 'Form KKP',                  meta: 'Internship Card Form',              icon: '📋' },
+  { url: pdfLembarPengesahan, name: 'Agency Approval Sheet', meta: 'Approval document from the agency',           icon: '✅' },
+  { url: pdfLembarPenilaian,  name: 'Agency Assessment Sheet',  meta: 'Assessment from the agency supervisor',         icon: '📊' },
+  { url: pdfSuratKeterangan,  name: 'Agency Certificate',  meta: 'Official certificate from the agency',      icon: '🏢' },
+  { url: pdfSuratPermohonan,  name: 'Internship Application Letter',       meta: 'Field Work Practice Application Letter',   icon: '📝' },
 ]
 
 // ── Data Dokumentasi ──

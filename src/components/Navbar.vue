@@ -3,7 +3,7 @@
     <div class="navbar-inner">
 
       <!-- Logo -->
-      <a href="#hero" class="navbar-logo">dennis.dev</a>
+      <a href="#hero" class="navbar-logo">Fullstack Developer</a>
 
       <!-- Nav Links Desktop -->
       <nav class="navbar-links" :class="{ 'menu-open': menuOpen }">

@@ -12,82 +12,104 @@
       <div class="section-heading fade-up">
         <h2 class="projects-title">Things I've built</h2>
         <p class="projects-subtitle">
-          Beberapa project yang pernah saya kerjakan,
-          dari web app hingga landing page.
+            A collection of practice projects I've worked on — from web apps, desktop app, landing page, and company profile.
         </p>
       </div>
 
-      <!-- Filter Tabs -->
-      <div class="filter-tabs fade-up">
-        <button class="tab-btn" v-for="tab in tabs" :key="tab" :class="{ active: activeTab === tab }"
-          @click="activeTab = tab">
-          {{ tab }}
-        </button>
-      </div>
+      <!-- ── Showcase: CardSwap + Info Panel ── -->
+      <div class="showcase fade-up">
 
-      <!-- Projects Grid -->
-      <div class="projects-grid">
-        <div class="project-card" v-for="project in filteredProjects" :key="project.title">
-          <!-- Thumbnail -->
-          <div class="card-thumb">
+        <!-- KIRI: CardSwap semua project -->
+        <div class="showcase-swap">
+          <CardSwap
+            :card-distance="18"
+            :vertical-distance="12"
+            :delay="2800"
+            :pause-on-hover="true"
+            :width="300"
+            :height="200"
+            @change="onCardChange"
+          >
+            <template
+              v-for="(project, index) in projects"
+              :key="project.title"
+              v-slot:[`card-${index}`]
+            >
+              <img
+                v-if="project.image"
+                :src="project.image"
+                :alt="project.title"
+              />
+              <div v-else class="swap-emoji-fallback">
+                {{ project.emoji }}
+              </div>
+            </template>
+          </CardSwap>
+        </div>
 
-            <!-- Kalau ada gambar -->
-            <img v-if="project.image" :src="project.image" :alt="project.title" class="card-img" />
+        <!-- KANAN: Info Project Aktif -->
+        <div class="showcase-info">
 
-            <!-- Kalau tidak ada gambar, pakai emoji -->
-            <span v-else class="card-emoji">
-              {{ project.emoji }}
-            </span>
+          <Transition name="fade-slide" mode="out-in">
+            <div :key="activeProject.title" class="info-content">
 
-            <div class="card-overlay">
+              <div class="info-top">
+                <span class="info-category">{{ activeProject.category }}</span>
+                <span class="info-year">{{ activeProject.year }}</span>
+              </div>
 
-              <a :href="project.link"
-              target="_blank"
-              class="overlay-btn"
-              v-if="project.link !== '#'"
+              <h3 class="info-title">{{ activeProject.title }}</h3>
+
+              <p class="info-desc">{{ activeProject.description }}</p>
+
+              <div class="info-meta">
+                <span class="info-role">{{ activeProject.role }}</span>
+              </div>
+
+              <div class="info-tags">
+                <span
+                  class="info-tag"
+                  v-for="tech in activeProject.tech"
+                  :key="tech"
+                >
+                  {{ tech }}
+                </span>
+              </div>
+
+              
+                <a v-if="activeProject.link !== '#'"
+                :href="activeProject.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="info-link"
               >
-              View Project ↗
+                <span>Visit Project</span>
+                <span class="info-link-arrow">↗</span>
               </a>
-              <span class="overlay-btn disabled" v-else>
+              <span v-else class="info-link disabled">
                 Private Project
               </span>
-            </div>
 
+            </div>
+          </Transition>
+
+          <!-- Progress -->
+          <div class="showcase-progress">
+            <span class="progress-count">
+              {{ String(activeIndex + 1).padStart(2, '0') }} / {{ String(projects.length).padStart(2, '0') }}
+            </span>
+            <div class="progress-dots">
+              <span
+                class="progress-dot"
+                v-for="(p, i) in projects"
+                :key="p.title"
+                :class="{ active: i === activeIndex }"
+              ></span>
+            </div>
           </div>
 
-          <!-- Card Body -->
-          <div class="card-body">
-
-            <!-- Title + Year -->
-            <div class="card-top">
-              <h3 class="card-title">{{ project.title }}</h3>
-              <span class="card-year">{{ project.year }}</span>
-            </div>
-
-            <!-- Description -->
-            <p class="card-desc">{{ project.description }}</p>
-
-            <!-- Meta: Role + Category -->
-            <div class="card-meta">
-              <span class="meta-role">{{ project.role }}</span>
-              <span class="meta-cat">{{ project.category }}</span>
-            </div>
-
-            <!-- Tech Stack Tags -->
-            <div class="card-tags">
-              <span class="tech-tag" v-for="tech in project.tech" :key="tech">
-                {{ tech }}
-              </span>
-            </div>
-
-            <!-- Publication Link -->
-            <a :href="project.link" target="_blank" class="card-link" v-if="project.link !== '#'">
-              <span>Visit Project</span>
-              <span class="link-arrow">↗</span>
-            </a>
-
-          </div>
         </div>
+
       </div>
 
     </div>
@@ -96,94 +118,93 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import CardSwap from './CardSwap.vue'
 
-// ── Import gambar langsung ──
-import imgEcommers from '../assets/img/ecommers.png'
-import imgPos from '../assets/img/pos.png'
+// ── Import gambar ──
+import imgEcommers    from '../assets/img/ecommers.png'
+import imgPos         from '../assets/img/pos.png'
 import imgSistemPakar from '../assets/img/appsistempakar.png'
-import imgNevalvc from '../assets/img/nevalvc.png'
-import imgUbp from '../assets/img/ubp.png'
+import imgNevalvc     from '../assets/img/nevalvc.png'
+import imgUbp         from '../assets/img/ubp.png'
+import systemCms1     from '../assets/img/systemcms1.png'
 
-// ── Filter Tabs ──
-const tabs = ['All', 'Web App', 'App Dekstop' , 'Landing Page' , 'Company Profile']
-            // 'landing page', 'dashboar admin'
-const activeTab = ref('All')
-
-// ── Data Projects ──
+// ── Data Semua Project (gabungan semua kategori) ──
 const projects = [
   {
-    image: imgEcommers,
-    emoji: '🛒',
-    title: 'E-Commerce Platform',
+    image:       systemCms1,
+    emoji:       '💼',
+    title:       'Client Management System',
+    description: 'Client project management system with tracking features, Midtrans payment gateway, and analytics dashboard. Built as the main portfolio for PT Citra Unggul Solusindo.',
+    year:        '2026',
+    role:        'Fullstack Developer',
+    category:    'Web App',
+    tech:        ['Laravel', 'Vue.js', 'Tailwind CSS', 'Midtrans'],
+    link:        '#',
+  },
+  {
+    image:       imgEcommers,
+    emoji:       '🛒',
+    title:       'E-Commerce Platform',
     description: 'Full-featured online store dengan fitur cart, payment gateway, manajemen produk, dan admin dashboard.',
-    year: '2026',
-    role: 'Fullstack Developer',
-    category: 'Web App',
-    tech: ['Laravel', 'Vite.js', 'MySQL', 'Bootsraps'],
-    link: '#',
+    year:        '2026',
+    role:        'Fullstack Developer',
+    category:    'Web App',
+    tech:        ['Laravel', 'Vite.js','MySQL', 'Bootstrap'],
+    link:        '#',
   },
   {
-    image: imgPos,
-    emoji: '🧾',
-    title: 'POS Application',
-    description: 'Sistem Point of Sale dengan fitur inventory, laporan penjualan harian, dan multi-user support.',
-    year: '2026',
-    role: 'Fullstack Developer',
-    category: 'Web App',
-    tech: ['Laravel', 'Vite.js', 'MySQL' , 'Bootsrap'],
-    link: '#',
+    image:       imgPos,
+    emoji:       '🧾',
+    title:       'POS Application',
+    description: 'Point of Sale system with inventory features, daily sales reports, and multi-user support.',
+    year:        '2026',
+    role:        'Fullstack Developer',
+    category:    'Web App',
+    tech:        ['Laravel', 'Vite.js', 'MySQL', 'Bootstrap'],
+    link:        '#',
   },
   {
-    image: imgSistemPakar,
-    emoji: '🧠',
-    title: 'Sistem Pakar Berbasis Dekstop',
-    description: 'Aplikasi sistem pakar untuk diagnosis menggunakan metode forward chaining berbasis dekstop fitur yang ada di aplikasi ada data pasien, data penyakit, data gejala, data aturan , diagnosis, hasil diagnosis, dan laporan.',
-    year: '2025',
-    role: 'Fullstack Developer',
-    category: 'App Dekstop',
-    tech: ['Netbeans', 'Java', 'MySQL'],
-    link: '#',
+    image:       imgSistemPakar,
+    emoji:       '🧠',
+    title:       'Desktop-Based Expert System for Diagnosing Maternal Diseases',
+    description: 'An expert system application for diagnosis using the desktop-based forward chaining method. Features: patient data, disease data, symptom data, rule data, diagnosis, diagnosis results, and reports.',
+    year:        '2025',
+    role:        'Fullstack Developer',
+    category:    'App Desktop',
+    tech:        ['Netbeans', 'Java', 'MySQL'],
+    link:        '#',
   },
   {
-    image: imgNevalvc,
-    emoji: '📊',
-    title: 'Company Profile Website',
-    description: 'Company profile di buat khusus untuk mempromosikan club bola volly neval yang sudah resmi terdaftar di pbvsi kota depok.',
-    year: '2026',
-    role: 'Frontend Developer',
-    category: 'Company  Profile',
-    tech: ['Vue.js', 'Tailwind CSS', 'Laravel'],
-    link: 'https://neval-vc.vercel.app/',
+    image:       imgNevalvc,
+    emoji:       '🏐',
+    title:       'Neval VC — Company Profile',
+    description: 'Company profile for the Neval volleyball club which has been officially registered with PBVSI Depok City.',
+    year:        '2026',
+    role:        'Frontend Developer',
+    category:    'Company Profile',
+    tech:        ['React.js','Tailwind CSS'],
+    link:        'https://neval-vc.vercel.app/',
   },
-  // {
-  //   image: null,
-  //   emoji: '🌐',
-  //   title: 'Landing Page — Brand X',
-  //   description: 'Modern landing page dengan smooth animations, mobile-first design, dan optimasi SEO.',
-  //   year: '2024',
-  //   role: 'Frontend Developer',
-  //   category: 'Landing Page',
-  //   tech: ['Vue.js', 'Tailwind CSS'],
-  //   link: '#',
-  // },
   {
-    image: imgUbp,
-    emoji: '🏢',
-    title: 'Company Profile Website',
-    description: 'Website company profile dengan halaman about, services, portfolio, dan contact form.',
-    year: '2024',
-    role: 'Fullstack Developer',
-    category: 'Landing Page',
-    tech: ['Laravel', 'Vue.js', 'Tailwind CSS'],
-    link: 'https://dennisadzuafirdaus-boop.github.io/LandingPage/UBP.html',
+    image:       imgUbp,
+    emoji:       '🏢',
+    title:       'UBP — Landing Page',
+    description: 'Company profile website with about, services, portfolio, and contact form pages.',
+    year:        '2024',
+    role:        'Fullstack Developer',
+    category:    'Landing Page',
+    tech:        ['HTML', 'CSS', 'Javascript'],
+    link:        'https://dennisadzuafirdaus-boop.github.io/LandingPage/UBP.html',
   },
 ]
 
-// ── Filter Logic ──
-const filteredProjects = computed(() => {
-  if (activeTab.value === 'All') return projects
-  return projects.filter((p) => p.category === activeTab.value)
-})
+// ── Sinkronisasi CardSwap dengan Info Panel ──
+const activeIndex   = ref(0)
+const activeProject = computed(() => projects[activeIndex.value])
+
+function onCardChange(index) {
+  activeIndex.value = index
+}
 </script>
 
 <style scoped>
@@ -222,7 +243,7 @@ const filteredProjects = computed(() => {
 
 /* ── Heading ── */
 .section-heading {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .projects-title {
@@ -237,231 +258,221 @@ const filteredProjects = computed(() => {
   font-size: 15px;
   color: #64748B;
   line-height: 1.7;
+  max-width: 480px;
 }
 
-/* ── Filter Tabs ── */
-.filter-tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 2.5rem;
-  flex-wrap: wrap;
-}
-
-.tab-btn {
-  font-size: 13px;
-  font-weight: 600;
-  color: #64748B;
-  background: transparent;
-  border: 1.5px solid #E2E8F0;
-  padding: 7px 18px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-.tab-btn:hover {
-  border-color: #94A3B8;
-  color: #0F172A;
-}
-
-.tab-btn.active {
-  background-color: #0F172A;
-  border-color: #0F172A;
-  color: #FFFFFF;
-}
-
-/* ── Projects Grid ── */
-.projects-grid {
+/* ── Showcase Layout ── */
+.showcase {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
+  grid-template-columns: 340px 1fr;
+  gap: 3.5rem;
+  align-items: center;
 }
 
-/* ── Project Card ── */
-.project-card {
-  background-color: #F1F5F9;
-  border: 1px solid #CBD5E1;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-}
-
-/* ── Thumbnail ── */
-.card-thumb {
-  position: relative;
-  height: 140px;
-  background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+/* ── KIRI: CardSwap ── */
+.showcase-swap {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  min-height: 260px;
 }
 
-.card-img {
+.swap-emoji-fallback {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover .card-img {
-  transform: scale(1.04);
-}
-
-.card-emoji {
-  font-size: 48px;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover .card-emoji {
-  transform: scale(1.15);
-}
-
-/* Overlay on hover */
-.card-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.25s ease;
+  font-size: 48px;
+  background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
 }
 
-.project-card:hover .card-overlay {
-  opacity: 1;
-}
-
-.overlay-btn {
-  font-size: 13px;
-  font-weight: 700;
-  color: #FFFFFF;
-  background: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.6);
-  padding: 8px 20px;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-.overlay-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.overlay-btn.disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
-/* ── Card Body ── */
-.card-body {
-  padding: 1.25rem;
-}
-
-.card-top {
+/* ── KANAN: Info Panel ── */
+.showcase-info {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.5rem;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.card-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: #0F172A;
-  line-height: 1.3;
+.info-content {
+  min-height: 220px;
 }
 
-.card-year {
-  font-size: 12px;
-  color: #94A3B8;
-  font-weight: 500;
-  white-space: nowrap;
-  margin-left: 8px;
-}
-
-.card-desc {
-  font-size: 13px;
-  color: #64748B;
-  line-height: 1.7;
-  margin-bottom: 0.75rem;
-}
-
-/* ── Card Meta ── */
-.card-meta {
+.info-top {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 0.75rem;
 }
 
-.meta-role {
+.info-category {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   color: #0F172A;
   background-color: #F1F5F9;
-  padding: 3px 10px;
-  border-radius: 999px;
-}
-
-.meta-cat {
-  font-size: 11px;
-  font-weight: 600;
-  color: #64748B;
-  background-color: transparent;
   border: 1px solid #E2E8F0;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* ── Tech Tags ── */
-.card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+.info-year {
+  font-size: 13px;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.info-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0F172A;
+  letter-spacing: -0.4px;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.info-desc {
+  font-size: 14px;
+  color: #64748B;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  max-width: 520px;
+}
+
+.info-meta {
   margin-bottom: 1rem;
 }
 
-.tech-tag {
-  font-size: 11px;
-  font-weight: 500;
-  color: #64748B;
-  background-color: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  padding: 3px 10px;
-  border-radius: 6px;
+.info-role {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
 }
 
-/* ── Card Link ── */
-.card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 13px;
+.info-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+}
+
+.info-tag {
+  font-size: 12px;
   font-weight: 600;
   color: #0F172A;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 5px 14px;
+  border-radius: 999px;
+}
+
+.info-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0F172A;
   text-decoration: none;
-  border-bottom: 1.5px solid #E2E8F0;
-  padding-bottom: 1px;
-  transition: border-color 0.2s ease;
+  border-bottom: 1.5px solid #0F172A;
+  padding-bottom: 2px;
+  width: fit-content;
+  transition: gap 0.2s ease, opacity 0.2s ease;
 }
 
-.card-link:hover {
-  border-color: #0F172A;
+.info-link:hover {
+  gap: 10px;
 }
 
-.link-arrow {
+.info-link.disabled {
+  color: #94A3B8;
+  border-bottom-color: #E2E8F0;
+  cursor: default;
+}
+
+.info-link-arrow {
   transition: transform 0.2s ease;
 }
 
-.card-link:hover .link-arrow {
-  transform: translate(2px, -2px);
+/* ── Progress ── */
+.showcase-progress {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 1rem;
+  border-top: 1px solid #E2E8F0;
+}
+
+.progress-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: #94A3B8;
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.progress-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.progress-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #E2E8F0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.progress-dot.active {
+  background-color: #0F172A;
+  transform: scale(1.4);
+}
+
+/* ── Transition Info Panel ── */
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* ── Responsive Mobile ── */
+@media (max-width: 900px) {
+  .showcase {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .showcase-swap {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 4rem 1.25rem;
+  }
+
+  .projects-title {
+    font-size: 26px;
+  }
+
+  .info-title {
+    font-size: 22px;
+  }
+
+  .info-desc {
+    max-width: 100%;
+  }
 }
 </style>

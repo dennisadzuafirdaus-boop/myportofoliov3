@@ -19,31 +19,19 @@
           </h2>
 
           <p class="about-desc">
-            Halo! Saya Dennis, seorang mahasiswa Teknik Informatika yang memiliki
-            minat besar di bidang pengembangan perangkat lunak dan teknologi informasi.
-            Saya memiliki semangat belajar yang tinggi serta selalu antusias untuk
-            mengembangkan kemampuan melalui berbagai proyek.
+            Hello! I'm Dennis, an information technology graduate with a strong interest in software development and information technology. I have a strong passion for learning and am always enthusiastic about developing my skills through various projects.
           </p>
 
           <p class="about-desc">
-            Fokus saya saat ini adalah pengembangan aplikasi web menggunakan Laravel,
-            Vue.js, serta pengelolaan database. Saya telah mengerjakan beberapa proyek
-            seperti sistem pakar berbasis web, aplikasi Point of Sale (POS), admin
-            dashboard, landing page, dan berbagai proyek latihan lainnya.
+            My current focus is web application development using Laravel, Vue.js, and database management. I have worked on several projects, including desktop-based expert systems, Point of Sale (POS) applications, Client Management Systems (CMS), and various other practice projects.
           </p>
 
           <p class="about-desc">
-            Selain pengembangan web, saya juga memiliki ketertarikan pada bidang
-            IT Support, troubleshooting komputer, serta pengelolaan sistem dan
-            jaringan dasar. Pengalaman magang sebagai IT Support memberikan saya
-            pemahaman yang lebih baik mengenai komunikasi dan pemecahan masalah.
+            Besides web development, I also have an interest in IT support, computer troubleshooting, and basic system and network management. My internship as an IT support professional has given me a better understanding of communication and problem-solving.
           </p>
 
           <p class="about-desc">
-            Di luar aktivitas akademik, saya memiliki hobi bermain voli yang
-            mengajarkan pentingnya kerja sama tim, disiplin, dan tanggung jawab.
-            Saya percaya kemampuan teknis perlu diimbangi dengan kemampuan
-            beradaptasi dan sikap profesional.
+           Outside of academics, I enjoy playing volleyball, which teaches me the importance of teamwork, discipline, and responsibility. I believe that technical skills need to be balanced with adaptability and a professional attitude.
           </p>
 
           <!-- Tech stack tags -->
@@ -116,7 +104,7 @@ import gsap from 'gsap'
 const stats = [
 //   { target: 3,  suffix: '+', label: 'Years Experience' },
   { target: 2, suffix: '++', label: 'Projects Done'    },
-  { target: 100, suffix: '%', label: 'Berkomitmen'    },
+  { target: 100, suffix: '%', label: 'Committed'    },
 //   { target: 6,  suffix: '+', label: 'Years at SMK'     },
 ]
 
@@ -130,8 +118,8 @@ const infoList = [
 
 // ── Tech Stack ──
 const techStack = [
-  'Laravel', 'Vue.js', 'PHP', 'MySQL',
-  'Tailwind CSS', 'REST API', 'Laragon', 'Git',
+  'Laravel', 'Vue.js', 'PHP', 'Javascript', 'MySQL', 
+  'Tailwind CSS','Bootsrap', 'REST API', 'Laragon', 'Git',
 ]
 
 // ── Animated Counter dengan GSAP ──

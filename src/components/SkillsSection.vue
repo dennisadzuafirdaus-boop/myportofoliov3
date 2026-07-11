@@ -12,8 +12,7 @@
       <div class="section-heading fade-up">
         <h2 class="skills-title">What I work with</h2>
         <p class="skills-subtitle">
-          Tools dan teknologi yang saya gunakan sehari-hari
-          untuk membangun web application.
+          The tools and technologies I use every day to build web applications.
         </p>
       </div>
 
