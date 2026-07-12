@@ -47,7 +47,10 @@
           <div class="exp-section">
             <h4 class="exp-section-title">Deskripsi</h4>
             <p class="exp-desc">
-              Underwent a Field Work Internship organized by the university to fulfill the final project requirements.The group was divided into eight Fullstack Developers at SMK 37 PGRI Jakarta. Responsible for designing and developing a web-based Tuition Payment Administration System using PHP Native and MySQL, from database design to user interface.
+              Underwent a Field Work Internship organized by the university to fulfill the final project
+              requirements.The group was divided into eight Fullstack Developers at SMK 37 PGRI Jakarta. Responsible for
+              designing and developing a web-based Tuition Payment Administration System using PHP Native and MySQL,
+              from database design to user interface.
             </p>
           </div>
 
@@ -55,11 +58,7 @@
           <div class="exp-section">
             <h4 class="exp-section-title">Responsibility</h4>
             <ul class="resp-list">
-              <li
-                class="resp-item"
-                v-for="item in smkResponsibilities"
-                :key="item"
-              >
+              <li class="resp-item" v-for="item in smkResponsibilities" :key="item">
                 <span class="resp-dot">✦</span>
                 <span>{{ item }}</span>
               </li>
@@ -70,11 +69,7 @@
           <div class="exp-section">
             <h4 class="exp-section-title">Tech Stack</h4>
             <div class="stack-tags">
-              <span
-                class="stack-tag"
-                v-for="tech in smkTechStack"
-                :key="tech"
-              >
+              <span class="stack-tag" v-for="tech in smkTechStack" :key="tech">
                 {{ tech }}
               </span>
             </div>
@@ -89,11 +84,7 @@
               Official documents during Field Work Practice.
             </p>
             <div class="pdf-list" ref="pdfListRef">
-              <div
-                class="pdf-card"
-                v-for="doc in pdfDocs"
-                :key="doc.name"
-              >
+              <div class="pdf-card" v-for="doc in pdfDocs" :key="doc.name">
                 <div class="pdf-info">
                   <div class="pdf-icon">{{ doc.icon }}</div>
                   <div class="pdf-detail">
@@ -102,19 +93,12 @@
                   </div>
                 </div>
                 <div class="pdf-actions">
-                  
-                    <a :href="doc.url"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="pdf-btn btn-view"
-                  >
+
+                  <a :href="doc.url" target="_blank" rel="noopener noreferrer" class="pdf-btn btn-view">
                     <span>👁</span> Look
                   </a>
-                  
-                    <a :href="doc.url"
-                    :download="doc.name + '.pdf'"
-                    class="pdf-btn btn-download"
-                  >
+
+                  <a :href="doc.url" :download="doc.name + '.pdf'" class="pdf-btn btn-download">
                     <span>⬇</span> Download
                   </a>
                 </div>
@@ -155,15 +139,25 @@
           <div class="exp-section">
             <h4 class="exp-section-title">Deskripsi</h4>
             <p class="exp-desc">
-            Participate in the HUB Internship Program organized by the Ministry of Manpower of the Republic of Indonesia, a program that aims to improve participants' competencies and work experience through direct placement in the industrial world.
+              Participate in the HUB Internship Program organized by the Ministry of Manpower of the Republic of
+              Indonesia, a program that aims to improve participants' competencies and work experience through direct
+              placement in the industrial world.
             </p>
             <br>
             <p class="exp-desc">
-            During his internship at PT. Eka Mulia Bhakti as IT Support, Assisted in the maintenance and management of the company's information technology infrastructure to ensure optimal operations. Performed patient data migration from the old system to the new system, Connected Dicom router to the Teramedi system to send x-ray images to the Satu Sehat platform via the Orthanc system, and hardware and software maintenance, as well as provided technical support to employees in solving various problems related to computer systems, networks, and work applications.
+              During his internship at PT. Eka Mulia Bhakti as IT Support, Assisted in the maintenance and management of
+              the company's information technology infrastructure to ensure optimal operations. Performed patient data
+              migration from the old system to the new system, Connected Dicom router to the Teramedi system to send
+              x-ray images to the Satu Sehat platform via the Orthanc system, and hardware and software maintenance, as
+              well as provided technical support to employees in solving various problems related to computer systems,
+              networks, and work applications.
             </p>
             <br>
             <p class="exp-desc">
-            In addition, they assist in troubleshooting computers, printers, internet networks, and other supporting devices, as well as assisting in the management of the company's information technology assets. Collaborate with the team to ensure the security, stability, and efficiency of technology use in the work environment.
+              In addition, they assist in troubleshooting computers, printers, internet networks, and other supporting
+              devices, as well as assisting in the management of the company's information technology assets.
+              Collaborate with the team to ensure the security, stability, and efficiency of technology use in the work
+              environment.
             </p>
           </div>
 
@@ -171,11 +165,7 @@
           <div class="exp-section">
             <h4 class="exp-section-title">Responsibility</h4>
             <ul class="resp-list">
-              <li
-                class="resp-item"
-                v-for="item in itResponsibilities"
-                :key="item"
-              >
+              <li class="resp-item" v-for="item in itResponsibilities" :key="item">
                 <span class="resp-dot">✦</span>
                 <span>{{ item }}</span>
               </li>
@@ -186,11 +176,7 @@
           <div class="exp-section">
             <h4 class="exp-section-title">Tools & Skills</h4>
             <div class="stack-tags">
-              <span
-                class="stack-tag"
-                v-for="tech in itTechStack"
-                :key="tech"
-              >
+              <span class="stack-tag" v-for="tech in itTechStack" :key="tech">
                 {{ tech }}
               </span>
             </div>
@@ -198,77 +184,41 @@
 
           <div class="exp-divider"></div>
 
+          <!-- ── TAMBAH INI: Certificates ── -->
+          <div class="exp-section">
+            <h4 class="exp-section-title">Certificates</h4>
+            <p class="gallery-subtitle">Certificates obtained during the internship.</p>
+
+            <div class="pdf-list">
+              <div class="pdf-card" v-for="doc in certDocs" :key="doc.name">
+                <div class="pdf-info">
+                  <div class="pdf-icon">{{ doc.icon }}</div>
+                  <div class="pdf-detail">
+                    <p class="pdf-name">{{ doc.name }}</p>
+                    <p class="pdf-meta">{{ doc.meta }}</p>
+                  </div>
+                </div>
+                <div class="pdf-actions">
+                  <a :href="doc.url" target="_blank" rel="noopener noreferrer" class="pdf-btn btn-view">
+                    <span>👁</span> Look
+                  </a>
+                  <a :href="doc.url" :download="doc.name" class="pdf-btn btn-download">
+                    <span>⬇</span> Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Dokumentasi Gallery — Option D: Masonry + Reveal -->
           <div class="exp-section">
             <h4 class="exp-section-title">Internship Documentation</h4>
-            <p class="gallery-subtitle">Click on the image to view more details.</p>
+            <p class="gallery-subtitle">Drag to rotate the gallery — click a photo to enlarge.</p>
 
-            <div class="masonry-grid" ref="galleryRef">
-
-              <!-- Kolom 1 -->
-              <div class="masonry-col">
-                <div
-                  class="gallery-item"
-                  v-for="(doc, index) in col1"
-                  :key="'c1-' + index"
-                  @click="openLightbox(doc.originalIndex)"
-                >
-                  <img :src="doc.src" :alt="doc.caption" class="gallery-img" loading="lazy" />
-                  <div class="gallery-overlay">
-                    <span class="gallery-zoom">🔍</span>
-                    <span class="gallery-cap-overlay">{{ doc.caption }}</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Kolom 2 -->
-              <div class="masonry-col col-offset">
-                <div
-                  class="gallery-item"
-                  v-for="(doc, index) in col2"
-                  :key="'c2-' + index"
-                  @click="openLightbox(doc.originalIndex)"
-                >
-                  <img :src="doc.src" :alt="doc.caption" class="gallery-img" loading="lazy" />
-                  <div class="gallery-overlay">
-                    <span class="gallery-zoom">🔍</span>
-                    <span class="gallery-cap-overlay">{{ doc.caption }}</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Kolom 3 -->
-              <div class="masonry-col">
-                <div
-                  class="gallery-item"
-                  v-for="(doc, index) in col3"
-                  :key="'c3-' + index"
-                  @click="openLightbox(doc.originalIndex)"
-                >
-                  <img :src="doc.src" :alt="doc.caption" class="gallery-img" loading="lazy" />
-                  <div class="gallery-overlay">
-                    <span class="gallery-zoom">🔍</span>
-                    <span class="gallery-cap-overlay">{{ doc.caption }}</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Kolom 4 -->
-              <div class="masonry-col col-offset">
-                <div
-                  class="gallery-item"
-                  v-for="(doc, index) in col4"
-                  :key="'c4-' + index"
-                  @click="openLightbox(doc.originalIndex)"
-                >
-                  <img :src="doc.src" :alt="doc.caption" class="gallery-img" loading="lazy" />
-                  <div class="gallery-overlay">
-                    <span class="gallery-zoom">🔍</span>
-                    <span class="gallery-cap-overlay">{{ doc.caption }}</span>
-                  </div>
-                </div>
-              </div>
-
+            <div class="dome-wrapper">
+              <DomeGallery :images="domeImages" :segments="20" :min-radius="380" :max-radius="480"
+                overlay-blur-color="#FFFFFF" image-border-radius="14px" opened-image-border-radius="14px"
+                opened-image-width="300px" opened-image-height="400px" :grayscale="false" />
             </div>
           </div>
 
@@ -279,36 +229,20 @@
 
     <!-- Lightbox -->
     <Teleport to="body">
-      <div
-        class="lightbox"
-        v-if="lightboxOpen"
-        @click.self="closeLightbox"
-      >
+      <div class="lightbox" v-if="lightboxOpen" @click.self="closeLightbox">
         <div class="lightbox-inner">
 
           <button class="lb-close" @click="closeLightbox">✕</button>
 
-          <button
-            class="lb-nav lb-prev"
-            @click="prevImage"
-            :disabled="currentIndex === 0"
-          >‹</button>
+          <button class="lb-nav lb-prev" @click="prevImage" :disabled="currentIndex === 0">‹</button>
 
           <div class="lb-img-wrapper">
-            <img
-              :src="documents[currentIndex].src"
-              :alt="documents[currentIndex].caption"
-              class="lb-img"
-            />
+            <img :src="documents[currentIndex].src" :alt="documents[currentIndex].caption" class="lb-img" />
             <p class="lb-caption">{{ documents[currentIndex].caption }}</p>
             <p class="lb-counter">{{ currentIndex + 1 }} / {{ documents.length }}</p>
           </div>
 
-          <button
-            class="lb-nav lb-next"
-            @click="nextImage"
-            :disabled="currentIndex === documents.length - 1"
-          >›</button>
+          <button class="lb-nav lb-next" @click="nextImage" :disabled="currentIndex === documents.length - 1">›</button>
 
         </div>
       </div>
@@ -320,13 +254,14 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import gsap from 'gsap'
+import DomeGallery from './DomeGallery.vue'
 
 // ── Import PDF PKL ──
-import pdfFromKKP          from '../assets/pdf/FORM_KKP.pdf?url'
+import pdfFromKKP from '../assets/pdf/FORM_KKP.pdf?url'
 import pdfLembarPengesahan from '../assets/pdf/LEMBAR_PENGESAHAN_INSTANSI.pdf?url'
-import pdfLembarPenilaian  from '../assets/pdf/LEMBAR_PENILAIAN_INSTANSI.pdf?url'
-import pdfSuratKeterangan  from '../assets/pdf/SURAT_KETERANGAN_INSTANSI.pdf?url'
-import pdfSuratPermohonan  from '../assets/pdf/SURAT_PERMOHONAN_KKP.pdf?url'
+import pdfLembarPenilaian from '../assets/pdf/LEMBAR_PENILAIAN_INSTANSI.pdf?url'
+import pdfSuratKeterangan from '../assets/pdf/SURAT_KETERANGAN_INSTANSI.pdf?url'
+import pdfSuratPermohonan from '../assets/pdf/SURAT_PERMOHONAN_KKP.pdf?url'
 
 // ── Import Dokumentasi IT Support ──
 import doc1 from '../assets/img/dokumen1.jpeg'
@@ -337,14 +272,18 @@ import doc5 from '../assets/img/dokumen5.jpeg'
 import doc6 from '../assets/img/dokumen6.jpeg'
 import doc7 from '../assets/img/dokumen7.jpeg'
 import doc8 from '../assets/img/dokumen8.png'
+import sertifikatRsHelsa from '../assets/img/sertifikatRsHelsa.jpeg'
+
+// ── Import PDF IT Support ──
+import sertifikatMagangHub from '../assets/pdf/sertifikat_magangHub.pdf?url'
 
 // ── SMK 37 PGRI — Responsibilities ──
 const smkResponsibilities = [
   'Designing a database for a tuition payment administration system using MySQL.',
-'Building a system using PHP Native.',
-'Implementing a payment reporting feature that can be exported to PDF.',
-'Testing and debugging the developed system.',
-'Documenting each feature and system flow technically.',
+  'Building a system using PHP Native.',
+  'Implementing a payment reporting feature that can be exported to PDF.',
+  'Testing and debugging the developed system.',
+  'Documenting each feature and system flow technically.',
 ]
 
 const smkTechStack = ['PHP Native', 'MySQL', 'CSS', 'HTML']
@@ -352,11 +291,11 @@ const smkTechStack = ['PHP Native', 'MySQL', 'CSS', 'HTML']
 // ── IT Support — Responsibilities ──
 const itResponsibilities = [
   'Perform hardware and software troubleshooting for all employees.',
-'Maintain and configure computer networks in the office environment.',
-'Install and configure software required by users.',
-'Provide direct on-site technical support to employees.',
-'Document every IT issue and the solutions provided.',
-'Assist in managing the companys IT equipment assets.',
+  'Maintain and configure computer networks in the office environment.',
+  'Install and configure software required by users.',
+  'Provide direct on-site technical support to employees.',
+  'Document every IT issue and the solutions provided.',
+  'Assist in managing the companys IT equipment assets.',
 ]
 
 const itTechStack = [
@@ -366,12 +305,33 @@ const itTechStack = [
 
 // ── Data PDF ──
 const pdfDocs = [
-  { url: pdfFromKKP,          name: 'Form KKP',                  meta: 'Internship Card Form',              icon: '📋' },
-  { url: pdfLembarPengesahan, name: 'Agency Approval Sheet', meta: 'Approval document from the agency',           icon: '✅' },
-  { url: pdfLembarPenilaian,  name: 'Agency Assessment Sheet',  meta: 'Assessment from the agency supervisor',         icon: '📊' },
-  { url: pdfSuratKeterangan,  name: 'Agency Certificate',  meta: 'Official certificate from the agency',      icon: '🏢' },
-  { url: pdfSuratPermohonan,  name: 'Internship Application Letter',       meta: 'Field Work Practice Application Letter',   icon: '📝' },
+  { url: pdfFromKKP, name: 'Form KKP', meta: 'Internship Card Form', icon: '📋' },
+  { url: pdfLembarPengesahan, name: 'Agency Approval Sheet', meta: 'Approval document from the agency', icon: '✅' },
+  { url: pdfLembarPenilaian, name: 'Agency Assessment Sheet', meta: 'Assessment from the agency supervisor', icon: '📊' },
+  { url: pdfSuratKeterangan, name: 'Agency Certificate', meta: 'Official certificate from the agency', icon: '🏢' },
+  { url: pdfSuratPermohonan, name: 'Internship Application Letter', meta: 'Field Work Practice Application Letter', icon: '📝' },
 ]
+
+// ── Data Sertifikat IT Support ──
+const certDocs = [
+  {
+    url: sertifikatRsHelsa,
+    name: 'Sertifikat RS Helsa',
+    meta: 'Certificate of completion — RS Helsa',
+    icon: '🏥',
+  },
+  {
+    url: sertifikatMagangHub,
+    name: 'Sertifikat Magang HUB',
+    meta: 'Ministry of Manpower HUB Internship Certificate',
+    icon: '🎓',
+  },
+]
+
+// ── Format dokumentasi untuk DomeGallery ──
+const domeImages = computed(() =>
+  documents.map((d) => ({ src: d.src, alt: d.caption }))
+)
 
 // ── Data Dokumentasi ──
 const documents = [
@@ -421,9 +381,9 @@ function nextImage() {
 
 function onKeydown(e) {
   if (!lightboxOpen.value) return
-  if (e.key === 'ArrowLeft')  prevImage()
+  if (e.key === 'ArrowLeft') prevImage()
   if (e.key === 'ArrowRight') nextImage()
-  if (e.key === 'Escape')     closeLightbox()
+  if (e.key === 'Escape') closeLightbox()
 }
 
 onMounted(() => {
@@ -436,11 +396,11 @@ onMounted(() => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             gsap.from(pdfListRef.value.children, {
-              opacity:    0,
-              y:          24,
-              duration:   0.5,
-              stagger:    0.1,
-              ease:       'power2.out',
+              opacity: 0,
+              y: 24,
+              duration: 0.5,
+              stagger: 0.1,
+              ease: 'power2.out',
               clearProps: 'all',
             })
             obsPdf.disconnect()
@@ -464,13 +424,13 @@ onMounted(() => {
             cols.forEach((col, i) => {
               const fromLeft = i % 2 === 0  // kolom 0,2 dari kiri
               gsap.from(col.children, {
-                opacity:    0,
-                x:          fromLeft ? -50 : 50,
-                y:          20,
-                duration:   0.6,
-                stagger:    0.12,
-                delay:      i * 0.08,
-                ease:       'power3.out',
+                opacity: 0,
+                x: fromLeft ? -50 : 50,
+                y: 20,
+                duration: 0.6,
+                stagger: 0.12,
+                delay: i * 0.08,
+                ease: 'power3.out',
                 clearProps: 'all',
               })
             })
@@ -526,7 +486,9 @@ onUnmounted(() => {
 }
 
 /* ── Heading ── */
-.section-heading { margin-bottom: 2.5rem; }
+.section-heading {
+  margin-bottom: 2.5rem;
+}
 
 .exp-title {
   font-size: 32px;
@@ -582,7 +544,9 @@ onUnmounted(() => {
   flex-shrink: 0;
 }
 
-.exp-meta { flex: 1; }
+.exp-meta {
+  flex: 1;
+}
 
 .exp-top-row {
   display: flex;
@@ -606,8 +570,15 @@ onUnmounted(() => {
   border-radius: 999px;
 }
 
-.badge-blue  { color: #0369A1; background-color: #E0F2FE; }
-.badge-green { color: #15803D; background-color: #DCFCE7; }
+.badge-blue {
+  color: #0369A1;
+  background-color: #E0F2FE;
+}
+
+.badge-green {
+  color: #15803D;
+  background-color: #DCFCE7;
+}
 
 .exp-company {
   font-size: 15px;
@@ -643,7 +614,9 @@ onUnmounted(() => {
   margin-bottom: 1.5rem;
 }
 
-.exp-section:last-child { margin-bottom: 0; }
+.exp-section:last-child {
+  margin-bottom: 0;
+}
 
 .exp-section-title {
   font-size: 11px;
@@ -790,7 +763,9 @@ onUnmounted(() => {
   border: 1px solid #E2E8F0;
 }
 
-.btn-view:hover { background-color: #F1F5F9; }
+.btn-view:hover {
+  background-color: #F1F5F9;
+}
 
 .btn-download {
   color: #FFFFFF;
@@ -803,19 +778,20 @@ onUnmounted(() => {
   transform: translateY(-1px);
 }
 
-/* ── Masonry Gallery ── */
-.masonry-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  align-items: start;
+.dome-wrapper {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+  background-color: #FFFFFF;
 }
 
-/* Kolom genap sedikit turun supaya layout masonry */
-.masonry-col {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+@media (max-width: 768px) {
+  .dome-wrapper {
+    height: 320px;
+  }
 }
 
 .col-offset {
@@ -845,12 +821,10 @@ onUnmounted(() => {
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(15, 23, 42, 0.85) 0%,
-    rgba(15, 23, 42, 0.2)  60%,
-    transparent            100%
-  );
+  background: linear-gradient(to top,
+      rgba(15, 23, 42, 0.85) 0%,
+      rgba(15, 23, 42, 0.2) 60%,
+      transparent 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -918,7 +892,9 @@ onUnmounted(() => {
   transition: background 0.2s ease;
 }
 
-.lb-close:hover { background: rgba(255, 255, 255, 0.2); }
+.lb-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 
 .lb-nav {
   width: 48px;
@@ -937,8 +913,14 @@ onUnmounted(() => {
   line-height: 1;
 }
 
-.lb-nav:hover:not(:disabled) { background: rgba(255, 255, 255, 0.2); }
-.lb-nav:disabled { opacity: 0.3; cursor: default; }
+.lb-nav:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lb-nav:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
 
 .lb-img-wrapper {
   display: flex;

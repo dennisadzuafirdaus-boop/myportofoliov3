@@ -384,4 +384,9 @@ body {
   .quick-info-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* Dipakai DomeGallery untuk kunci scroll saat gambar di-enlarge */
+body.dg-scroll-lock {
+  overflow: hidden;
+}
 }
